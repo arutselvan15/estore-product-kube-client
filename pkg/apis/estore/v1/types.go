@@ -19,14 +19,19 @@ package v1
 import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 const (
-	ProductLabelClusterName = "product.k8s.io/cluster-name"
-	ProductLabelNamespace   = "product.k8s.io/namespace"
-	ProductLabelBrand       = "product.k8s.io/brand"
-	ProductLabelCategory    = "product.k8s.io/category"
+	ProductLabelClusterName = "product.estore.com/cluster-name"
+	ProductLabelNamespace   = "product.estore.com/namespace"
+	ProductLabelBrand       = "product.estore.com/brand"
+	ProductLabelCategory    = "product.estore.com/category"
 
-	ProductAnnotationOutOfStock  = "product.k8s.io/out-of-stock"
-	ProductAnnotationApplyOffer  = "product.k8s.io/apply-offer"
-	ProductAnnotationForceDelete = "product.k8s.io/force-delete"
+	ProductAnnotationOutOfStock  = "product.estore.com/out-of-stock"
+	ProductAnnotationApplyOffer  = "product.estore.com/apply-offer"
+	ProductAnnotationForceDelete = "product.estore.com/force-delete"
+	ProductAnnotationRequester   = "product.estore.com/requester"
+
+	ProductAnnotationWebhookValidateKey = "admission-webhook.product.estore.com/validate"
+	ProductAnnotationWebhookMutateKey   = "admission-webhook.product.estore.com/mutate"
+	ProductAnnotationWebhookStatusKey   = "admission-webhook.product.estore.com/status"
 )
 
 type ProductConditionType string

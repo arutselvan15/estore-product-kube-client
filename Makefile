@@ -1,6 +1,17 @@
-GO=GOOS=linux GOARCH=amd64 GO111MODULE=on go
+GO=GO111MODULE=on go
+GO_CROSS_CMPL=GOOS=linux GOARCH=amd64 ${GO}
 
-CR_REPO_PATH=github.com/arutselvan15/estore-product-kube-client
+NAME=estore-product-kube-client
+BINARY=bin/${NAME}
+MAIN_GO=cmd/main.go
+
+BUILD=$(or ${BUILD_NUMBER},unknown)
+VPREFIX=$(or ${VERSION_PERFIX}, v)
+VERSION=${VPREFIX}.${BUILD}
+DATE=$(shell date)
+HOSTNAME=$(shell hostname)
+
+CR_REPO_PATH=github.com/arutselvan15/${NAME}
 CR_GROUP=estore
 CR_VERSION=v1
 
@@ -47,3 +58,17 @@ gen-client:
 rm-client:
 	@echo "==> Remove go client..."
 	rm -rf ${GOPATH}/src/${CR_REPO_PATH}/pkg/client ${GOPATH}/src/${CR_REPO_PATH}/pkg/apis/${CR_GROUP}/${CR_VERSION}/zz_generated.deepcopy.go
+
+gen-version:
+	@echo "==> Generating Version..."
+	echo "Version=${VERSION}" > version.txt
+	echo "Date=${DATE}" >> version.txt
+	echo "Host=${HOSTNAME}" >> version.txt
+	cat version.txt
+
+build: test gen-version
+	@echo "==> Build Local..."
+	CGO_ENABLED=0 ${GO} build -o ${BINARY} ${MAIN_GO}
+
+container: build
+	docker build -t ${NAME} .
