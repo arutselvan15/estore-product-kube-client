@@ -19,10 +19,14 @@ package v1
 import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 const (
-	ProductLabelClusterName = "product.estore.com/cluster-name"
-	ProductLabelNamespace   = "product.estore.com/namespace"
-	ProductLabelBrand       = "product.estore.com/brand"
-	ProductLabelCategory    = "product.estore.com/category"
+	GroupName    string = "estore.com"
+	GroupVersion string = "v1"
+	Kind         string = "product"
+
+	ProductLabelClusterName string = "product.estore.com/cluster-name"
+	ProductLabelNamespace          = "product.estore.com/namespace"
+	ProductLabelBrand              = "product.estore.com/brand"
+	ProductLabelCategory           = "product.estore.com/category"
 
 	ProductAnnotationOutOfStock  = "product.estore.com/out-of-stock"
 	ProductAnnotationApplyOffer  = "product.estore.com/apply-offer"

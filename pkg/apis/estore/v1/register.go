@@ -22,11 +22,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
-const (
-	GroupName    string = "estore.com"
-	GroupVersion string = "v1"
-)
-
 // Define your schema name and the version
 var SchemeGroupVersion = schema.GroupVersion{
 	Group:   GroupName,
