@@ -1,10 +1,10 @@
 
 ```yaml
-apiVersion: product.k8s.estore.com/v1alpha1
+apiVersion: estore/v1
 kind: Product
 metadata:
   finalizers:
-  - product.k8s.estore.com/operator
+  - product.estore.k8s.io/operator
   name: test-product
   namespace: ""
 spec:

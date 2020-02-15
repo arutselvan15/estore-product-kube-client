@@ -19,19 +19,19 @@ package v1
 import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 const (
-	ProductLabelClusterName = "product.estore.com/cluster-name"
-	ProductLabelNamespace   = "product.estore.com/namespace"
-	ProductLabelBrand       = "product.estore.com/brand"
-	ProductLabelCategory    = "product.estore.com/category"
+	ProductLabelClusterName = "product.estore.k8s.io/cluster-name"
+	ProductLabelNamespace   = "product.estore.k8s.io/namespace"
+	ProductLabelBrand       = "product.estore.k8s.io/brand"
+	ProductLabelCategory    = "product.estore.k8s.io/category"
 
-	ProductAnnotationOutOfStock  = "product.estore.com/out-of-stock"
-	ProductAnnotationApplyOffer  = "product.estore.com/apply-offer"
-	ProductAnnotationForceDelete = "product.estore.com/force-delete"
-	ProductAnnotationRequester   = "product.estore.com/requester"
+	ProductAnnotationOutOfStock  = "product.estore.k8s.io/out-of-stock"
+	ProductAnnotationApplyOffer  = "product.estore.k8s.io/apply-offer"
+	ProductAnnotationForceDelete = "product.estore.k8s.io/force-delete"
+	ProductAnnotationRequester   = "product.estore.k8s.io/requester"
 
-	ProductAnnotationWebhookValidateKey = "admission-webhook.product.estore.com/validate"
-	ProductAnnotationWebhookMutateKey   = "admission-webhook.product.estore.com/mutate"
-	ProductAnnotationWebhookStatusKey   = "admission-webhook.product.estore.com/status"
+	ProductAnnotationWebhookValidateKey = "admission-webhook.product.estore.k8s.io/validate"
+	ProductAnnotationWebhookMutateKey   = "admission-webhook.product.estore.k8s.io/mutate"
+	ProductAnnotationWebhookStatusKey   = "admission-webhook.product.estore.k8s.io/status"
 )
 
 type ProductConditionType string

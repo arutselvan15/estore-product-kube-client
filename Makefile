@@ -1,5 +1,6 @@
-GO=GO111MODULE=on go
-GO_CROSS_CMPL=GOOS=linux GOARCH=amd64 ${GO}
+GO=${GO_CROSS_CMPL} GO111MODULE=on go
+# for mac GO_CROSS_CMPL=GOOS=darwin GOARCH=amd64
+# for linux GO_CROSS_CMPL=GOOS=linux GOARCH=amd64
 
 NAME=estore-product-kube-client
 BINARY=bin/${NAME}
