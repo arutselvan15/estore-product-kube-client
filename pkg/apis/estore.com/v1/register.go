@@ -23,7 +23,7 @@ import (
 )
 
 const (
-	GroupName    string = "estore"
+	GroupName    string = "estore.com"
 	GroupVersion string = "v1"
 )
 

@@ -13,7 +13,7 @@ DATE=$(shell date)
 HOSTNAME=$(shell hostname)
 
 CR_REPO_PATH=github.com/arutselvan15/${NAME}
-CR_GROUP=estore
+CR_GROUP=estore.com
 CR_VERSION=v1
 
 init-pkg-dir:
