@@ -175,7 +175,7 @@ type LastOperation struct {
 	Description string `json:"description,omitempty"`
 
 	// Last update time of current operation
-	LastUpdateTime *metav1.Time `json:"lastUpdateTime,omitempty"`
+	LastUpdateTime metav1.Time `json:"lastUpdateTime,omitempty"`
 
 	// State of operation
 	State ProductState `json:"state,omitempty"`
@@ -193,5 +193,5 @@ type CurrentStatus struct {
 	TimeoutActive bool `json:"timeoutActive,omitempty"`
 
 	// LastUpdateTime is the last update time of current status
-	LastUpdateTime *metav1.Time `json:"lastUpdateTime,omitempty"`
+	LastUpdateTime metav1.Time `json:"lastUpdateTime,omitempty"`
 }
